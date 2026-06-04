@@ -1,0 +1,126 @@
+<nav class="bg-white shadow-md px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-8">
+      <span class="text-2xl font-bold text-blue-600">ComuniApp</span>
+      <ul class="flex gap-6 text-gray-600 relative">
+        <li><a href="#" class="hover:text-blue-600 transition">Inicio</a></li>
+        <li>
+          <button (click)="toggleDropdown('localidades')" (blur)="closeDropdowns()" class="hover:text-blue-600 transition flex items-center gap-1">
+            Localidades
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          @if (localidadesOpen()) {
+            <ul class="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-40 z-50">
+              @for (localidad of localidades; track localidad) {
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ localidad }}</a></li>
+              }
+            </ul>
+          }
+        </li>
+        <li>
+          <button (click)="toggleDropdown('categorias')" (blur)="closeDropdowns()" class="hover:text-blue-600 transition flex items-center gap-1">
+            Categorías
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          @if (categoriasOpen()) {
+            <ul class="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-40 z-50">
+              @for (categoria of categorias; track categoria) {
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ categoria }}</a></li>
+              }
+            </ul>
+          }
+        </li>
+        <li><a href="#" class="hover:text-blue-600 transition">Contacto</a></li>
+      </ul>
+      <div class="relative">
+        <input 
+          type="text" 
+          placeholder="Buscar servicios..." 
+          class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
+        >
+        <svg class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 relative">
+      <button (click)="toggleDropdown('userMenu')" (blur)="closeDropdowns()" class="flex items-center gap-2 hover:bg-gray-100 p-2 -m-2 rounded-lg transition">
+        <span class="text-gray-700 font-medium">Juan Pérez</span>
+        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Juan" alt="Usuario" class="w-10 h-10 rounded-full border-2 border-blue-500">
+      @if (userMenuOpen()) {
+        <ul class="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-48 z-50">
+          @for (option of userMenuOptions; track option) {
+            <li>
+              @if (option === 'Publicar un servicio') {
+                <a href="/create-service" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ option }}</a>
+              } @else {
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ option }}</a>
+              }
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-6 py-12">
+  <div class="flex flex-col gap-6">
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-gray-100 hover:shadow-2xl transition delay-75 duration-300 ease-in-out hover:-translate-y-3">
+      <div class="w-72 h-full flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop" alt="Consultoría Empresarial" class="w-full h-full object-cover cursor-pointer">
+      </div>
+      <div class="p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-3"><strong>Consultoría Empresarial</strong></h2>
+        <span class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-3 w-fit">Negocios</span>
+        <p class="text-gray-600 leading-relaxed">Ofrecemos asesoramiento especializado para optimizar tus procesos internos, aumentar la productividad y mejorar la rentabilidad de tu empresa. Nuestro equipo de expertos analyze cada aspecto de tu negocio para proporcionar soluciones personalizadas.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-gray-100 hover:shadow-2xl transition delay-75 duration-300 ease-in-out hover:-translate-y-3">
+      <div class="w-72 h-fukk flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop" alt="Desarrollo de Software" class="w-full h-full object-cover cursor-pointer">
+      </div>
+      <div class="p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-3"><strong>Desarrollo de Software</strong></h2>
+        <span class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-3 w-fit">Tecnología</span>
+        <p class="text-gray-600 leading-relaxed">Creamos soluciones tecnológicas a medida para memenuhi tus necesidades específicas. Desde aplicaciones móviles hasta sistemas empresariales complejos, nuestro equipo de desarrolladores utiliza las últimas tecnologías para entregar productos de alta calidad.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-gray-100 hover:shadow-2xl transition delay-75 duration-300 ease-in-out hover:-translate-y-3">
+      <div class="w-72 h-full flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Marketing Digital" class="w-full h-full object-cover cursor-pointer">
+      </div>
+      <div class="p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-3"><strong>Marketing Digital</strong></h2>
+        <span class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-3 w-fit">Marketing</span>
+        <p class="text-gray-600 leading-relaxed">Potencia tu presencia en línea con estrategias de marketing digital efectivas. Gestionamos redes sociales, campañas publicitarias, SEO y contenido para aumentar tu alcance y convertir visitantes en clientes faithfuls de tu marca.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-gray-100 hover:shadow-2xl transition delay-75 duration-300 ease-in-out hover:-translate-y-3">
+      <div class="w-72 h-full flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Gestión de Proyectos" class="w-full h-full object-cover cursor-pointer">
+      </div>
+      <div class="p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-3"><strong>Gestión de Proyectos</strong></h2>
+        <span class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-3 w-fit">Gestión</span>
+        <p class="text-gray-600 leading-relaxed">Implementamos metodologías ágiles y tradicionales para asegurar que tus proyectos se entreguen a tiempo y dentro del presupuesto. Coordinamos equipos, recursos y plazos para lograr resultados excepcionales en cada iniciativa.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-gray-100 hover:shadow-2xl transition delay-75 duration-300 ease-in-out hover:-translate-y-3">
+      <div class="w-72 h-full flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop" alt="Contabilidad y Finanzas" class="w-full h-full object-cover cursor-pointer">
+      </div>
+      <div class="p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-3"><strong>Contabilidad y Finanzas</strong></h2>
+        <span class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-3 w-fit">Finanzas</span>
+        <p class="text-gray-600 leading-relaxed">Servicios contables completos para mantener tus finanzas en orden. Manejamos contabilidad, declaraciones de impuestos, nóminas y análisis financiero para que puedas enfocarte en hacer crecer tu negocio con tranquilidad.</p>
+      </div>
+    </div>
+  </div>
+</main>
