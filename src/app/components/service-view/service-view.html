@@ -1,0 +1,105 @@
+<div class="max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <aside class="lg:col-span-2 order-2 lg:order-1">
+      <div class="space-y-4 lg:mt-24">
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop" alt="Limpieza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Limpieza del hogar</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop" alt="Jardinería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Jardinería</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=300&fit=crop" alt="Cocina" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Cocina a domicilio</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&h=300&fit=crop" alt="Mantenimiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Mantenimiento</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="lg:col-span-8 order-1 lg:order-2 mt-20">
+      <img
+        [src]="serviceObject.serviceImage"
+        [alt]="serviceObject.serviceName"
+        class="w-full h-64 md:h-96 object-cover rounded-xl mb-6 mt-4"
+      />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        {{ serviceObject.serviceName }}
+      </h1>
+
+      <div class="prose prose-lg max-w-none text-gray-600 mb-8">
+        <p>{{ serviceObject.serviceDescription }}</p>
+      </div>
+
+      <section class="border-t pt-8 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">Comentarios</h2>
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-lg p-4">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-semibold">M</div>
+              <div>
+                <p class="font-medium text-gray-900">María García</p>
+                <p class="text-sm text-gray-500">Hace 2 días</p>
+              </div>
+            </div>
+            <p class="text-gray-700">Excelente servicio, muy profesionales y puntuales. Recomendado!</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-semibold">J</div>
+              <div>
+                <p class="font-medium text-gray-900">Juan Pérez</p>
+                <p class="text-sm text-gray-500">Hace 1 semana</p>
+              </div>
+            </div>
+            <p class="text-gray-700">Muy buen trato con las mascotas, mi perro quedó muy feliz.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="lg:col-span-2 order-3">
+      <div class="space-y-4 lg:mt-24">
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://www.sosasistencia.com/wp-content/uploads/2022/10/Pintura-pared-min-scaled.jpg" alt="Pintura" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Pintura</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop" alt="Electricista" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Electricista</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://www.sosasistencia.com/wp-content/uploads/2020/05/instalacion-valvula-salida-sanitario.jpg" alt="Plomería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Plomería</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-square rounded-lg overflow-hidden mb-2">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300&h=300&fit=crop" alt="Mudanzas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <p class="text-sm text-center text-gray-700 font-bold">Mudanzas</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>

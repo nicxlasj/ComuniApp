@@ -54,7 +54,7 @@
           @for (option of userMenuOptions; track option) {
             <li>
               @if (option === 'Publicar un servicio') {
-                <a href="/create-service" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ option }}</a>
+                <a routerLink="/create-service" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ option }}</a>
               } @else {
                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">{{ option }}</a>
               }

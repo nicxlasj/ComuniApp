@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ServiceModel } from '../../models/ServiceModel';
 
 @Component({
   selector: 'app-services-page',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './services-page.html',
   styleUrl: './services-page.css',
 })
@@ -55,8 +56,10 @@ export class ServicesPage {
   }
 
   protected closeDropdowns() {
-    this.localidadesOpen.set(false);
-    this.categoriasOpen.set(false);
-    this.userMenuOpen.set(false);
+    setTimeout(() => {
+      this.localidadesOpen.set(false);
+      this.categoriasOpen.set(false);
+      this.userMenuOpen.set(false);
+    }, 300);
   }
 }
